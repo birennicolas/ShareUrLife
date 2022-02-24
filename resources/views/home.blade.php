@@ -13,9 +13,9 @@
             <div class="pe-5"><strong>23k </strong>followers</div>
             <div class="pe-5"><strong>212 </strong>followings</div>
             </div>
-            <div class="pt-4 font-weight-bold">kenzathemalinois</div>
-            <div class="pt-4">I am one of the craziest dogs you can ever imagine</div>
-            <div ><a href="https://www.woopets.fr/chien/race/berger-belge-malinois">Malinois</a></div>
+            <div class="pt-4 font-weight-bold">{{ $user->profile->title }}</div>
+            <div class="pt-4">{{ $user->profile->description }}</div>
+            <div ><a href="#">{{ $user->profile->url }}</a></div>
         </div>
     </div>
 
