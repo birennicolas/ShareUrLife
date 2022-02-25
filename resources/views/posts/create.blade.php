@@ -3,6 +3,9 @@
 @section('content')
 <div class="container">
     <form action="/p" enctype="multipart/form-data" method="post">
+
+        @csrf
+
         <div class="row">
             <div class="col-8 offset-2">
 
@@ -37,9 +40,7 @@
             <input type="file" class="form-control-file" id="image" name="image">
 
             @error('image')
-                <span class="invalid-feedback" role="alert">
                     <strong>{{ $message }}</strong>
-                </span>
             @enderror
         </div>
 
