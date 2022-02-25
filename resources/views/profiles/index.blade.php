@@ -4,13 +4,21 @@
 <div class="container">
     <div class="row">
         <div class="col-3 p-5">
-            <img src="https://cdn.shopify.com/s/files/1/0278/2632/3555/articles/malinois-image_800x800.jpg?v=1614100972" alt="malinois" class="rounded-circle" style="width: 10vw; height:auto">
+            <img src="/storage/{{ $user->profile->image }}"  class="rounded-circle" style="width: 250px; height:auto">
         </div>
         <div class="col-9 p-5">
             <div class="d-flex justify-content-between align-items-baseline">
                 <h1> {{ $user -> username }}</h1>
+
+                @can('update', $user->profile)
                 <a href="/p/create">Add new post</a>
+                @endcan
             </div>
+
+            @can('update', $user->profile)
+                <a href="/profile/{{ $user -> id }}/edit">Edit profile</a>
+            @endcan
+
             <div class="d-flex pt-4">
                 <div class="pe-5"><strong>{{ $user->posts->count() }} </strong>posts</div>
                 <div class="pe-5"><strong>23k </strong>followers</div>
