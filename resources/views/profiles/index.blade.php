@@ -9,7 +9,7 @@
         <div class="col-9 p-5">
             <div class="d-flex justify-content-between align-items-baseline">
                 <h1> {{ $user -> username }}</h1>
-                <a href="#">Add new post</a>
+                <a href="/p/create">Add new post</a>
             </div>
             <div class="d-flex pt-4">
                 <div class="pe-5"><strong>153 </strong>posts</div>
@@ -23,15 +23,12 @@
     </div>
 
     <div class="row pt-5">
-        <div class="col-4">
-            <img src="https://cdn.shopify.com/s/files/1/0278/2632/3555/articles/malinois-image_800x800.jpg?v=1614100972" alt="malinois1" class="w-100">
-        </div>
-        <div class="col-4">
-            <img src="https://images.onlinepets.com/uploads/2021/02/Mechelse-Herder.jpg?auto=format" alt="malinois2" class="w-100">
-        </div>
-        <div class="col-4">
-            <img src="https://www.woopets.fr/assets/races/000/031/square300/berger-belge-malinois.jpg" alt="malinois3" class="w-100">
-        </div>
+        @foreach($user->posts as $post)
+            <div class="col-4">
+                <img src="/storage/{{ $post->image }}" class="w-100">
+            </div>
+        @endforeach
+
     </div>
 </div>
 
