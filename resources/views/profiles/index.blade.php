@@ -11,7 +11,7 @@
                 <div class="d-flex align-items-center">
                     <h1> {{ $user -> username }}</h1>
 
-                    <follow-button></follow-button>
+                    <follow-button user-id="{{ $user->id }}" follows="{{ $follows }}"></follow-button>
                 </div>
 
                 @can('update', $user->profile)
